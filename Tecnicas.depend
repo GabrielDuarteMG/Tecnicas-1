@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1505845062 source:c:\users\gabriel duarte\documents\visual studio 2017\projects\tecnicas\main.c
+	<stdio.h>
+	<stdlib.h>
+
