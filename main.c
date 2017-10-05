@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 /*Deus e Fiel!
@@ -310,13 +311,17 @@ void Ex90(){
 	y =1;
 	printf("Digite o decimal: ");
 	scanf("%d",&x);
-	while(x!=0) {
-		octal[y++]= x % 8;
-		x = x / 8;
+	if(x == 0){
+      	printf("Numero octal> 0");
 	}
-	printf("Numero octal> ");
-	for (Rep = y -1 ;Rep> 0;Rep--)
-	      printf("%d",octal[Rep]);
+    else{
+        while(x!=0) {
+            octal[y++]= x % 8;
+            x = x / 8;
+        }
+        printf("Numero octal> ");
+        for (Rep = y -1 ;Rep> 0;Rep--)
+        printf("%d",octal[Rep]);
+    }
     EscolherMenu(0,90);
 }
-
