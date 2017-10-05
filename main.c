@@ -286,7 +286,7 @@ void Ex13(){
 }
 void Ex90(){
     int x;
-	int octal[100],y,j;
+	int octal[100],y,Rep;
 	y =1;
 	printf("Digite o decimal: ");
 	scanf("%d",&x);
@@ -295,7 +295,7 @@ void Ex90(){
 		x = x / 8;
 	}
 	printf("Numero octal> ");
-	for (j = y -1 ;j> 0;j--)
-	      printf("%d",octal[j]);
+	for (Rep = y -1 ;Rep> 0;Rep--)
+	      printf("%d",octal[Rep]);
     EscolherMenu(0);
 }
