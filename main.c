@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*Deus é Fiel!
+#include <math.h>
+/*Deus e Fiel!
     Codigo feito por Gabriel Duarte;
     09/2017
 */
@@ -42,6 +43,7 @@ void Menu(){
     printf("\nExercicio 11 - MEDIA DE 10 NUMEROS DIGITADOS PELO USUARIO");
     printf("\nExercicio 12 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO IGNORANDO OS NEGATIVOS");
     printf("\nExercicio 13 - SOMA DE 5 NUMEROS IMPARES DIGITADOS PELO USUARIO");
+    printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
     printf("\n\nIr para exercicio: ");
     scanf("%d",&opcao);
     Limpar();
@@ -73,6 +75,8 @@ void Menu(){
         Ex12();break;
     case 13:
         Ex13();break;
+    case 90:
+        Ex90();break;
     default:
     EscolherMenu(1);
     }
@@ -86,8 +90,7 @@ void Ex1(){
     printf("\nDigite o segundo numero: ");
     scanf("%d",&y);
     printf("\nResultado: %d",x+y);
-    float f;
-
+    EscolherMenu(0);
 }
 void Ex2(){
     printf("Exercicio 2 - EXIBIR PROXIMO NUMERO PAR\n\n");
@@ -104,13 +107,12 @@ void Ex2(){
 void Ex3(){
     printf("Exercicio 3 - PAR OU IMPAR\n\n");
     int x;
-    printf("Digite o número x: ");
+    printf("Digite o nï¿½mero x: ");
     scanf("%d",&x);
     if (x% 2 == 0)
         printf("%d Numero par",x);
     else
         printf("%d Numero Impar",x);
-    float f;
     EscolherMenu(0);
 }
 void Ex4(){
@@ -134,7 +136,6 @@ void Ex5(){
     scanf("%f",&altura);
     imc = peso / (float)  (altura*altura);
     printf("IMC= %.2f",imc);
-       float f;
     EscolherMenu(0);
 }
 void Ex6(){
@@ -145,8 +146,7 @@ float distancia, tempo, velocidade;
     printf("Digite o tempo gasto em horas: ");
     scanf("%f",&tempo);
     velocidade = distancia/tempo;
-    printf("Velocidade média foi de %.2f km por hora",velocidade);
-       float f;
+    printf("Velocidade mï¿½dia foi de %.2f km por hora",velocidade);
     EscolherMenu(0);
 }
 void Ex7(){
@@ -164,7 +164,6 @@ void Ex7(){
     }else {
         printf("\nReprovado com %.2f pontos",soma);
     }
-   float f;
     EscolherMenu(0);
 
 }
@@ -178,27 +177,26 @@ void Ex8(){
 	    printf("Digite o terceiro numero: ");
 	scanf("%d",&z);
 	if ((x>y) && (x>z)){
-		printf("O número maior é: %d\n",x);
+		printf("O nï¿½mero maior ï¿½: %d\n",x);
 	}
 	if ((y>x) && (y>z)){
-		printf("O número maior é: %d\n",y);
+		printf("O nï¿½mero maior ï¿½: %d\n",y);
 	}
 	if ((z>x) && (z>y)){
-		printf("O número maior é: %d\n",z);
+		printf("O nï¿½mero maior ï¿½: %d\n",z);
 	}
 	if (x == y && x == z){
-		printf("O número maior é: %d\n",x);
+		printf("O nï¿½mero maior ï¿½: %d\n",x);
 	}
 	if ((x==y) && (x>z)){
-		printf("O número maior é: %d\n",x);
+		printf("O nï¿½mero maior ï¿½: %d\n",x);
 	}
 	if ((x==z) && (x>y)){
-		printf("O número maior é: %d\n",x);
+		printf("O nï¿½mero maior ï¿½: %d\n",x);
 	}
 	if ((z==y) && (y>x)){
-		printf("O número maior é: %d\n",y);
+		printf("O nï¿½mero maior ï¿½: %d\n",y);
 	}
-	   float f;
     EscolherMenu(0);
 }
 void Ex9(){
@@ -214,7 +212,6 @@ void Ex9(){
             y++;
         }
     }
-       float f;
     EscolherMenu(0);
 }
 void Ex10(){
@@ -229,7 +226,6 @@ void Ex10(){
       y++;
       if(y == 10)printf("\n\n\nSoma de todos os valores = %i",z);
       }
-         float f;
     EscolherMenu(0);
 }
 void Ex11(){
@@ -247,7 +243,6 @@ void Ex11(){
             printf("\n\n\nA media dos 10 valores  = %i",z);
       }
       }
-         float f;
     EscolherMenu(0);
 
 }
@@ -267,7 +262,6 @@ void Ex12(){
             printf("\n\n\nA media dos 10 valores  = %i",z);
       }
       }
-         float f;
     EscolherMenu(0);
 
 }
@@ -287,7 +281,21 @@ void Ex13(){
             printf("\n\n\nA soma dos 5 valores impares = %i",z);
         }
     }
-       float f;
     EscolherMenu(0);
 
+}
+void Ex90(){
+    int x;
+	int octal[100],y,j;
+	y =1;
+	printf("Digite o decimal: ");
+	scanf("%d",&x);
+	while(x!=0) {
+		octal[y++]= x % 8;
+		x = x / 8;
+	}
+	printf("Numero octal> ");
+	for (j = y -1 ;j> 0;j--)
+	      printf("%d",octal[j]);
+    EscolherMenu(0);
 }
