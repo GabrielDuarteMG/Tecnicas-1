@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 /*Deus e Fiel!
     Codigo feito por Gabriel Duarte;
     09/2017
 */
 void main(){
-      printf("Tecnicas de programacao");
+    printf("Tecnicas de programacao");
     printf("\nFacudade: UNIPAC");
     printf("\nAluno: Gabriel Duarte dos Santos");
     printf("\nProfessor: Diego Alves da Silva");
@@ -14,17 +13,38 @@ void main(){
     Menu();
 }
 void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
-void EscolherMenu(int x){
-    float f;
+void EscolherMenu(int x,int exec){
+    int f;
     if(x == 1)
         printf("Exercicio nao encontrado. \n\n");
     else
         printf("\n\n Exercicio executado.");
-    printf("\n\nDeseja voltar ao menu? 1 Se sim, 0 Se nao: ");
-    scanf("%f",&f);
+    printf("\n\nVoce Deseja\n0-Sair\n1-Menu\n2-Repetir o exercicio\n>");
+    scanf("%d",&f);
     if(f==1){
         Limpar();
         Menu();
+    }
+    else if(f == 2){
+        Limpar();
+        switch(exec){
+        case 0: Menu(); break;
+        case 1:Ex1() ;break;
+        case 2:Ex2() ;break;
+        case 3:Ex3();break;
+        case 4:Ex4();break;
+        case 5:Ex5();break;
+        case 6:Ex6();break;
+        case 7:Ex7();break;
+        case 8:Ex8();break;
+        case 9:Ex9();break;
+        case 10:Ex10();break;
+        case 11:Ex11();break;
+        case 12:Ex12();break;
+        case 13:Ex13();break;
+        case 90:Ex90();break;
+        default:Menu();break;
+        }
     }
 }
 void Menu(){
@@ -49,11 +69,11 @@ void Menu(){
     Limpar();
     switch(opcao){
     case  1:
-        Ex1();break;
+        Ex1() ;break;
     case 2:
         Ex2();break;
     case  3:
-        Ex3();break;
+        Ex3() ;break;
     case 4:
         Ex4();break;
     case  5:
@@ -61,8 +81,7 @@ void Menu(){
     case 6:
         Ex6();break;
     case  7:
-        Ex7();
-        break;
+        Ex7();break;
     case 8:
         Ex8();break;
     case  9:
@@ -78,7 +97,7 @@ void Menu(){
     case 90:
         Ex90();break;
     default:
-    EscolherMenu(1);
+    EscolherMenu(1,0);
     }
 }
 
@@ -90,7 +109,7 @@ void Ex1(){
     printf("\nDigite o segundo numero: ");
     scanf("%d",&y);
     printf("\nResultado: %d",x+y);
-    EscolherMenu(0);
+    EscolherMenu(0,1);
 }
 void Ex2(){
     printf("Exercicio 2 - EXIBIR PROXIMO NUMERO PAR\n\n");
@@ -102,18 +121,18 @@ void Ex2(){
     else
         printf("Proximo Par: %d",(x+1));
     float f;
-    EscolherMenu(0);
+    EscolherMenu(0,2);
 }
 void Ex3(){
     printf("Exercicio 3 - PAR OU IMPAR\n\n");
     int x;
-    printf("Digite o n�mero x: ");
+    printf("Digite o numero x: ");
     scanf("%d",&x);
     if (x% 2 == 0)
         printf("%d Numero par",x);
     else
         printf("%d Numero Impar",x);
-    EscolherMenu(0);
+    EscolherMenu(0,3);
 }
 void Ex4(){
     printf("Exercicio 4 - POSITIVO OU NEGATIVO\n\n");
@@ -125,7 +144,7 @@ void Ex4(){
     else
         printf("%d Numero positivo",x);
            float f;
-    EscolherMenu(0);
+    EscolherMenu(0,4);
 }
 void Ex5(){
     printf("Exercicio 5 - CALCULAR IMC\n\n");
@@ -136,7 +155,7 @@ void Ex5(){
     scanf("%f",&altura);
     imc = peso / (float)  (altura*altura);
     printf("IMC= %.2f",imc);
-    EscolherMenu(0);
+    EscolherMenu(0,5);
 }
 void Ex6(){
     printf("Exercicio 6 - VELOCIDADE MEDIA\n\n");
@@ -146,8 +165,8 @@ float distancia, tempo, velocidade;
     printf("Digite o tempo gasto em horas: ");
     scanf("%f",&tempo);
     velocidade = distancia/tempo;
-    printf("Velocidade m�dia foi de %.2f km por hora",velocidade);
-    EscolherMenu(0);
+    printf("Velocidade media foi de %.2f km por hora",velocidade);
+    EscolherMenu(0,6);
 }
 void Ex7(){
         printf("Exercicio 7 - SOMA DE 3 NOTAS\n\n");
@@ -164,7 +183,7 @@ void Ex7(){
     }else {
         printf("\nReprovado com %.2f pontos",soma);
     }
-    EscolherMenu(0);
+    EscolherMenu(0,7);
 
 }
 void Ex8(){
@@ -177,27 +196,27 @@ void Ex8(){
 	    printf("Digite o terceiro numero: ");
 	scanf("%d",&z);
 	if ((x>y) && (x>z)){
-		printf("O n�mero maior �: %d\n",x);
+		printf("O numero maior: %d\n",x);
 	}
 	if ((y>x) && (y>z)){
-		printf("O n�mero maior �: %d\n",y);
+		printf("O numero maior: %d\n",y);
 	}
 	if ((z>x) && (z>y)){
-		printf("O n�mero maior �: %d\n",z);
+		printf("O numero maior : %d\n",z);
 	}
 	if (x == y && x == z){
-		printf("O n�mero maior �: %d\n",x);
+		printf("O numero maior : %d\n",x);
 	}
 	if ((x==y) && (x>z)){
-		printf("O n�mero maior �: %d\n",x);
+		printf("O numero maior : %d\n",x);
 	}
 	if ((x==z) && (x>y)){
-		printf("O n�mero maior �: %d\n",x);
+		printf("O numero maior : %d\n",x);
 	}
 	if ((z==y) && (y>x)){
-		printf("O n�mero maior �: %d\n",y);
+		printf("O numero maior : %d\n",y);
 	}
-    EscolherMenu(0);
+    EscolherMenu(0,8);
 }
 void Ex9(){
 
@@ -212,7 +231,7 @@ void Ex9(){
             y++;
         }
     }
-    EscolherMenu(0);
+    EscolherMenu(0,9);
 }
 void Ex10(){
     printf("Exercicio 10 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO\n\n");
@@ -226,7 +245,7 @@ void Ex10(){
       y++;
       if(y == 10)printf("\n\n\nSoma de todos os valores = %i",z);
       }
-    EscolherMenu(0);
+    EscolherMenu(0,10);
 }
 void Ex11(){
       printf("Exercicio 11 - MEDIA DE 10 NUMEROS DIGITADOS PELO USUARIO\n\n");
@@ -243,7 +262,7 @@ void Ex11(){
             printf("\n\n\nA media dos 10 valores  = %i",z);
       }
       }
-    EscolherMenu(0);
+    EscolherMenu(0,11);
 
 }
 void Ex12(){
@@ -262,7 +281,7 @@ void Ex12(){
             printf("\n\n\nA media dos 10 valores  = %i",z);
       }
       }
-    EscolherMenu(0);
+    EscolherMenu(0,12);
 
 }
 void Ex13(){
@@ -281,12 +300,12 @@ void Ex13(){
             printf("\n\n\nA soma dos 5 valores impares = %i",z);
         }
     }
-    EscolherMenu(0);
+    EscolherMenu(0,13);
 
 }
 void Ex90(){
-	printf("Exercicio 90 - PONTO EXTRA: Converter Decimal para octal\n\n");
-	int x;
+    printf("Exercicio 90 - PONTO EXTRA: Converter Decimal para octal\n\n");
+    int x;
 	int octal[100],y,Rep;
 	y =1;
 	printf("Digite o decimal: ");
@@ -298,5 +317,6 @@ void Ex90(){
 	printf("Numero octal> ");
 	for (Rep = y -1 ;Rep> 0;Rep--)
 	      printf("%d",octal[Rep]);
-	EscolherMenu(0);
+    EscolherMenu(0,90);
 }
+
