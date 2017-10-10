@@ -306,13 +306,13 @@ void Ex13(){
 }
 void Ex90(){
     printf("Exercicio 90 - PONTO EXTRA: Converter Decimal para octal\n\n");
-    int x;
+       int x;
 	int octal[100],y,Rep;
 	y =1;
 	printf("Digite o decimal: ");
 	scanf("%d",&x);
-	if(x == 0){
-      	printf("Numero octal> 0");
+	if(x <= 0){
+      	printf("[ERROR] Numero inserido> %d",x);
 	}
     else{
         while(x!=0) {
@@ -323,5 +323,6 @@ void Ex90(){
         for (Rep = y -1 ;Rep> 0;Rep--)
         printf("%d",octal[Rep]);
     }
+
     EscolherMenu(0,90);
 }
