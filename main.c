@@ -326,3 +326,31 @@ void Ex90(){
 
     EscolherMenu(0,90);
 }
+
+/*  int you;
+    int y,x,result;
+    x = 0;
+    y = 0;
+    printf("Digite a quantidade de notas: ");
+    scanf("%d",&you);
+    int a[you];
+    while(y != you){
+    printf("\nDigite a nota %d de %d: ",y+ 1,you);
+    scanf("%d",&a[y]);
+    x = x + a[y];
+    y++;
+    }
+    result = x/y;
+    y=0;
+    printf("\nMedia das notas= %d\n",result);
+    if(result >= 60)
+        printf("\nCandidato aprovado\n");
+    else
+        printf("\nCandidato reprovado\n");
+    printf("\nNotas digitadas:");
+    while(y != you)
+    {
+        printf("%d,",a[y]);
+        y++;
+    }
+    printf("\n");*/
