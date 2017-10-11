@@ -44,6 +44,7 @@ void EscolherMenu(int x,int exec){
         case 12:Ex12();break;
         case 13:Ex13();break;
         case 90:Ex90();break;
+        case 14: Ex14();break;
         default:Menu();break;
         }
     }
@@ -64,6 +65,7 @@ void Menu(){
     printf("\nExercicio 11 - MEDIA DE 10 NUMEROS DIGITADOS PELO USUARIO");
     printf("\nExercicio 12 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO IGNORANDO OS NEGATIVOS");
     printf("\nExercicio 13 - SOMA DE 5 NUMEROS IMPARES DIGITADOS PELO USUARIO");
+    printf("\nExercicio 14 - MEDIA DE NOTAS DIGITADAS");
     printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
     printf("\n\nIr para exercicio: ");
     scanf("%d",&opcao);
@@ -95,7 +97,8 @@ void Menu(){
         Ex12();break;
     case 13:
         Ex13();break;
-    case 90:
+	case 14: Ex14();break;
+	 case 90:
         Ex90();break;
     default:
     EscolherMenu(1,0);
@@ -185,7 +188,6 @@ void Ex7(){
         printf("\nReprovado com %.2f pontos",soma);
     }
     EscolherMenu(0,7);
-
 }
 void Ex8(){
     printf("Exercicio 8 - QUAL NUMERO MAIOR\n\n");
@@ -326,8 +328,9 @@ void Ex90(){
 
     EscolherMenu(0,90);
 }
-
-/*  int you;
+void Ex14(){
+    printf("Exercicio 14 - MEDIA DE NOTAS DIGITADAS\n\n");
+	int you;
     int y,x,result;
     x = 0;
     y = 0;
@@ -353,4 +356,6 @@ void Ex90(){
         printf("%d,",a[y]);
         y++;
     }
-    printf("\n");*/
+    printf("\n");
+    EscolherMenu(0,14);
+}
