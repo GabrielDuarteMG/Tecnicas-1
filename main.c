@@ -388,7 +388,6 @@ void Ex15(){
         }
         y++;
     }
-    Acertos = Acertos -1;
     printf("%d numeros",Acertos);
     if(Acertos == 6){
         printf("\nGanhou Tudo!!");
