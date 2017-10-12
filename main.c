@@ -1,6 +1,6 @@
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 /*Deus e Fiel!
     Codigo feito por Gabriel Duarte;
     09/2017
@@ -45,6 +45,7 @@ void EscolherMenu(int x,int exec){
         case 13:Ex13();break;
         case 90:Ex90();break;
         case 14: Ex14();break;
+		case 15: Ex15();break;
         default:Menu();break;
         }
     }
@@ -66,6 +67,7 @@ void Menu(){
     printf("\nExercicio 12 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO IGNORANDO OS NEGATIVOS");
     printf("\nExercicio 13 - SOMA DE 5 NUMEROS IMPARES DIGITADOS PELO USUARIO");
     printf("\nExercicio 14 - MEDIA DE NOTAS DIGITADAS");
+	printf("\nExercicio 15 - LOTERIA");
     printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
     printf("\n\nIr para exercicio: ");
     scanf("%d",&opcao);
@@ -98,6 +100,7 @@ void Menu(){
     case 13:
         Ex13();break;
 	case 14: Ex14();break;
+			case 15: Ex15();break;
 	 case 90:
         Ex90();break;
     default:
@@ -358,4 +361,55 @@ void Ex14(){
     }
     printf("\n");
     EscolherMenu(0,14);
+}
+void Ex15(){
+    printf("Exercicio 15 - LOTERIA\n");
+    int usuario[6];
+    int numeros[6];
+    int y,x, Acertos;
+    y = 0;
+    srand( (unsigned)time(NULL) );
+    while(6 != y){
+        x = rand() %55;
+        if(x <= 55&& x >= 1){
+        numeros[y] = x;
+        printf("\nDigite o numero %d de 6(Entre 1 e 55): ",y + 1);
+        scanf("%d",&usuario[y]);
+        if(usuario[y] > 55){
+            usuario[y] = 0;
+        }else y++;
+        }
+    }
+    y=0;
+    printf("\nVoce acertou: ");
+    while(6 != y){
+        if(usuario[y] == numeros[y]){
+            Acertos++;
+        }
+        y++;
+    }
+    Acertos = Acertos -1;
+    printf("%d numeros",Acertos);
+    if(Acertos == 6){
+        printf("\nGanhou Tudo!!");
+    }
+    else if(Acertos == 5){
+        printf("\nGanhou quina!!");
+    }
+    else if(Acertos == 4){
+        printf("\nGanhou quadra!!");
+    }
+    else if(Acertos == 3){
+        printf("\nQuase...");
+    }
+    else{
+        printf("\nNao foi hoje...");
+    }
+    printf("\n\n\nNumeros Gerados: ");
+    y=0;
+    while(6 != y){
+        printf("%d,",numeros[y]);
+        y++;
+    }
+    EscolherMenu(0,15);
 }
