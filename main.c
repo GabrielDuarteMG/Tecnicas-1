@@ -382,19 +382,17 @@ void Ex15(){
             }
         }
     }
-    printf("\nVoce acertou: ");
-    printf("%d numeros",Acertos);
+    printf("\nVoce acertou: %d numeros",Acertos);
     if(Acertos == 6)
-        printf("\nGanhou Tudo!!");
+        printf("\nGanhou Tudo!!\n\n\nNumeros Gerados:");
     else if(Acertos == 5)
-        printf("\nGanhou quina!!");
+        printf("\nGanhou quina!!\n\n\nNumeros Gerados:");
     else if(Acertos == 4)
-        printf("\nGanhou quadra!!");
+        printf("\nGanhou quadra!!\n\n\nNumeros Gerados:");
     else if(Acertos == 3)
-        printf("\nQuase...");
+        printf("\nQuase...\n\n\nNumeros Gerados:");
     else
-        printf("\nNao foi hoje...");
-    printf("\n\n\nNumeros Gerados: ");
+        printf("\nNao foi hoje...\n\n\nNumeros Gerados:");
    for(y=0;6 != y;y++)
         printf("%d,",numeros[y]);
     EscolherMenu(0,15);
