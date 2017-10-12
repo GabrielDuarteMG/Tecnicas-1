@@ -364,7 +364,7 @@ void Ex14(){
 }
 void Ex15(){
     printf("Exercicio 15 - LOTERIA\n");
-    int usuario[6];
+ int usuario[6];
     int numeros[6];
     int y,x, Acertos;
     y = 0;
@@ -372,43 +372,30 @@ void Ex15(){
     while(6 != y){
         x = rand() %55;
         if(x <= 55&& x >= 1){
-        numeros[y] = x;
-        printf("\nDigite o numero %d de 6(Entre 1 e 55): ",y + 1);
-        scanf("%d",&usuario[y]);
-        if(usuario[y] > 55){
-            usuario[y] = 0;
-        }else y++;
+            numeros[y] = x;
+            printf("\nDigite o numero %d de 6(Entre 1 e 55): ",y + 1);
+            scanf("%d",&usuario[y]);
+            if(usuario[y] > 55) usuario[y] = 0;
+            else{
+                if(usuario[y] == numeros[y])Acertos++;
+                y++;
+            }
         }
     }
-    y=0;
     printf("\nVoce acertou: ");
-    while(6 != y){
-        if(usuario[y] == numeros[y]){
-            Acertos++;
-        }
-        y++;
-    }
     printf("%d numeros",Acertos);
-    if(Acertos == 6){
+    if(Acertos == 6)
         printf("\nGanhou Tudo!!");
-    }
-    else if(Acertos == 5){
+    else if(Acertos == 5)
         printf("\nGanhou quina!!");
-    }
-    else if(Acertos == 4){
+    else if(Acertos == 4)
         printf("\nGanhou quadra!!");
-    }
-    else if(Acertos == 3){
+    else if(Acertos == 3)
         printf("\nQuase...");
-    }
-    else{
+    else
         printf("\nNao foi hoje...");
-    }
     printf("\n\n\nNumeros Gerados: ");
-    y=0;
-    while(6 != y){
+   for(y=0;6 != y;y++)
         printf("%d,",numeros[y]);
-        y++;
-    }
     EscolherMenu(0,15);
 }
