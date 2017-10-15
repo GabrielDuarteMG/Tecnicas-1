@@ -333,44 +333,35 @@ void Ex90(){
 }
 void Ex14(){
     printf("Exercicio 14 - MEDIA DE NOTAS DIGITADAS\n\n");
-	int you;
+	int notas;
+    printf("Digite a quantidade de notas: ");
+    scanf("%d",&notas);
+    int a[notas];
     int y,x,result;
     x = 0;
-    y = 0;
-    printf("Digite a quantidade de notas: ");
-    scanf("%d",&you);
-    int a[you];
-    while(y != you){
-    printf("\nDigite a nota %d de %d: ",y+ 1,you);
+    for(y= 0;y != notas; y++){
+    printf("\nDigite a nota %d de %d: ",y+ 1,notas);
     scanf("%d",&a[y]);
     x = x + a[y];
-    y++;
     }
     result = x/y;
-    y=0;
-    printf("\nMedia das notas= %d\n",result);
     if(result >= 60)
-        printf("\nCandidato aprovado\n");
+        printf("\nMedia das notas= %d\nCandidato aprovado\n\nNotas digitadas: ",result);
     else
-        printf("\nCandidato reprovado\n");
-    printf("\nNotas digitadas:");
-    while(y != you)
-    {
+        printf("\nMedia das notas= %d\nCandidato reprovado\n\nNotas digitadas: ",result);
+    for(y= 0;y != notas; y++)
         printf("%d,",a[y]);
-        y++;
-    }
-    printf("\n");
     EscolherMenu(0,14);
 }
 void Ex15(){
     printf("Exercicio 15 - LOTERIA\n");
- int usuario[6];
+    int usuario[6];
     int numeros[6];
     int y,x, Acertos;
     y = 0;
     srand( (unsigned)time(NULL) );
     while(6 != y){
-        x = rand() %55;
+        x = rand();
         if(x <= 55&& x >= 1){
             numeros[y] = x;
             printf("\nDigite o numero %d de 6(Entre 1 e 55): ",y + 1);
@@ -384,16 +375,19 @@ void Ex15(){
     }
     printf("\nVoce acertou: %d numeros",Acertos);
     if(Acertos == 6)
-        printf("\nGanhou Tudo!!\n\n\nNumeros Gerados:");
+        printf("\nGanhou Tudo!!\n\n\nNumeros Gerados: ");
     else if(Acertos == 5)
-        printf("\nGanhou quina!!\n\n\nNumeros Gerados:");
+        printf("\nGanhou quina!!\n\n\nNumeros Gerados: ");
     else if(Acertos == 4)
-        printf("\nGanhou quadra!!\n\n\nNumeros Gerados:");
+        printf("\nGanhou quadra!!\n\n\nNumeros Gerados: ");
     else if(Acertos == 3)
-        printf("\nQuase...\n\n\nNumeros Gerados:");
+        printf("\nQuase...\n\n\nNumeros Gerados: ");
     else
-        printf("\nNao foi hoje...\n\n\nNumeros Gerados:");
-   for(y=0;6 != y;y++)
+        printf("\nNao foi hoje...\n\n\nNumeros Gerados: ");
+    for(y=0;6 != y;y++)
         printf("%d,",numeros[y]);
+        printf("\nNumeros digitados:");
+    for(y=0;6 != y;y++)
+        printf("%d,",usuario[y]);
     EscolherMenu(0,15);
 }
