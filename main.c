@@ -311,7 +311,7 @@ void Ex13(){
 }
 void Ex90(){
     printf("Exercicio 90 - PONTO EXTRA: Converter Decimal para octal\n\n");
-    int x;
+       int x;
 	int octal[100],y,Rep;
 	y =1;
 	printf("Digite o decimal: ");
@@ -359,6 +359,7 @@ void Ex15(){
     int numeros[6];
     int y,x, Acertos;
     y = 0;
+    Acertos = 0;
     srand( (unsigned)time(NULL) );
     while(6 != y){
         x = rand();
@@ -368,7 +369,7 @@ void Ex15(){
             scanf("%d",&usuario[y]);
             if(usuario[y] > 55) usuario[y] = 0;
             else{
-                if(usuario[y] == numeros[y])Acertos++;
+                if(usuario[y] == x)Acertos++;
                 y++;
             }
         }
