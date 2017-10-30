@@ -5,109 +5,9 @@
     Codigo feito por Gabriel Duarte;
     09/2017
 */
-void main(){
-    printf("Tecnicas de programacao");
-    printf("\nFacudade: UNIPAC");
-    printf("\nAluno: Gabriel Duarte dos Santos");
-    printf("\nProfessor: Diego Alves da Silva");
-    printf("\nPeriodo: Primeiro\n");
-    Menu();
-}
-void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
-void EscolherMenu(int x,int exec){
-    int f;
-    if(x == 1)
-        printf("Exercicio nao encontrado. \n\n");
-    else
-        printf("\n\n Exercicio executado.");
-    printf("\n\nVoce Deseja\n0-Sair\n1-Menu\n2-Repetir o exercicio\n>");
-    scanf("%d",&f);
-    if(f==1){
-        Limpar();
-        Menu();
-    }
-    else if(f == 2){
-        Limpar();
-        switch(exec){
-        case 0: Menu(); break;
-        case 1:Ex1() ;break;
-        case 2:Ex2() ;break;
-        case 3:Ex3();break;
-        case 4:Ex4();break;
-        case 5:Ex5();break;
-        case 6:Ex6();break;
-        case 7:Ex7();break;
-        case 8:Ex8();break;
-        case 9:Ex9();break;
-        case 10:Ex10();break;
-        case 11:Ex11();break;
-        case 12:Ex12();break;
-        case 13:Ex13();break;
-        case 90:Ex90();break;
-        case 14: Ex14();break;
-		case 15: Ex15();break;
-        default:Menu();break;
-        }
-    }
-}
-void Menu(){
-    int opcao;
-    printf(" \n            LISTA DE EXERCICIOS\n\n\n");
-    printf("\nExercicio 1 - SOMA DE 2 NUMEROS");
-    printf("\nExercicio 2 - EXIBIR PROXIMO NUMERO PAR");
-    printf("\nExercicio 3 - PAR OU IMPAR");
-    printf("\nExercicio 4 - POSITIVO OU NEGATIVO");
-    printf("\nExercicio 5 - CALCULAR IMC");
-    printf("\nExercicio 6 - VELOCIDADE MEDIA");
-    printf("\nExercicio 7 - SOMA DE 3 NOTAS");
-    printf("\nExercicio 8 - QUAL NUMERO MAIOR");
-    printf("\nExercicio 9 - PROXIMOS 10 PARES");
-    printf("\nExercicio 10 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO");
-    printf("\nExercicio 11 - MEDIA DE 10 NUMEROS DIGITADOS PELO USUARIO");
-    printf("\nExercicio 12 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO IGNORANDO OS NEGATIVOS");
-    printf("\nExercicio 13 - SOMA DE 5 NUMEROS IMPARES DIGITADOS PELO USUARIO");
-    printf("\nExercicio 14 - MEDIA DE NOTAS DIGITADAS");
-	printf("\nExercicio 15 - LOTERIA");
-    printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
-    printf("\n\nIr para exercicio: ");
-    scanf("%d",&opcao);
-    Limpar();
-    switch(opcao){
-    case  1:
-        Ex1() ;break;
-    case 2:
-        Ex2();break;
-    case  3:
-        Ex3() ;break;
-    case 4:
-        Ex4();break;
-    case  5:
-        Ex5();break;
-    case 6:
-        Ex6();break;
-    case  7:
-        Ex7();break;
-    case 8:
-        Ex8();break;
-    case  9:
-        Ex9();break;
-    case 10:
-        Ex10();break;
-    case  11:
-        Ex11();break;
-    case 12:
-        Ex12();break;
-    case 13:
-        Ex13();break;
-	case 14: Ex14();break;
-			case 15: Ex15();break;
-	 case 90:
-        Ex90();break;
-    default:
-    EscolherMenu(1,0);
-    }
-}
-
+void EscolherMenu(int x,int exec);
+void Menu();
+void Limpar();
 void Ex1(){
     printf("Exercicio 1 - SOMA DE 2 NUMEROS\n\n");
     int x,y;
@@ -392,3 +292,133 @@ void Ex15(){
         printf("%d,",usuario[y]);
     EscolherMenu(0,15);
 }
+void Ex91(){
+    printf("Exercicio 91 - PONTO EXTRA: Calcular fatorial\n\n");
+    int numero,v1, v2,v3,x;
+    printf("Digite o numero para calculo: ");
+    scanf("%i",&numero);
+    if(numero > 0){
+        v2=1;
+        v1=1;
+        v3=0;
+        for(x=1;x<=numero;x++){
+            v3=v2*v1;
+            v2=v3;
+            v1=v1+1;
+        }
+        printf("\nResultado= %i\n\n",v3);
+    }
+    else{
+        printf("\nNumero inserido menor que 1");
+    }
+    EscolherMenu(0,91);
+}
+void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
+
+void EscolherMenu(int x,int exec){
+    int f;
+    if(x == 1)
+        printf("Exercicio nao encontrado. \n\n");
+    else
+        printf("\n\n Exercicio executado.");
+    printf("\n\nVoce Deseja\n0-Sair\n1-Menu\n2-Repetir o exercicio\n>");
+    scanf("%d",&f);
+    if(f==1){
+        Limpar();
+        Menu();
+    }
+    else if(f == 2){
+        Limpar();
+        switch(exec){
+        case 0: Menu(); break;
+        case 1:Ex1() ;break;
+        case 2:Ex2() ;break;
+        case 3:Ex3();break;
+        case 4:Ex4();break;
+        case 5:Ex5();break;
+        case 6:Ex6();break;
+        case 7:Ex7();break;
+        case 8:Ex8();break;
+        case 9:Ex9();break;
+        case 10:Ex10();break;
+        case 11:Ex11();break;
+        case 12:Ex12();break;
+        case 13:Ex13();break;
+        case 90:Ex90();break;
+        case 14: Ex14();break;
+		case 15: Ex15();break;
+        case 91:Ex91();break;
+        default:Menu();break;
+        }
+    }
+}
+void Menu(){
+    int opcao;
+    printf(" \n            LISTA DE EXERCICIOS\n\n\n");
+    printf("\nExercicio 1 - SOMA DE 2 NUMEROS");
+    printf("\nExercicio 2 - EXIBIR PROXIMO NUMERO PAR");
+    printf("\nExercicio 3 - PAR OU IMPAR");
+    printf("\nExercicio 4 - POSITIVO OU NEGATIVO");
+    printf("\nExercicio 5 - CALCULAR IMC");
+    printf("\nExercicio 6 - VELOCIDADE MEDIA");
+    printf("\nExercicio 7 - SOMA DE 3 NOTAS");
+    printf("\nExercicio 8 - QUAL NUMERO MAIOR");
+    printf("\nExercicio 9 - PROXIMOS 10 PARES");
+    printf("\nExercicio 10 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO");
+    printf("\nExercicio 11 - MEDIA DE 10 NUMEROS DIGITADOS PELO USUARIO");
+    printf("\nExercicio 12 - SOMA DE 10 NUMEROS DIGITADOS PELO USUARIO IGNORANDO OS NEGATIVOS");
+    printf("\nExercicio 13 - SOMA DE 5 NUMEROS IMPARES DIGITADOS PELO USUARIO");
+    printf("\nExercicio 14 - MEDIA DE NOTAS DIGITADAS");
+	printf("\nExercicio 15 - LOTERIA");
+    printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
+    printf("\nExercicio 91 - PONTO EXTRA: Calcular fatorial");
+    printf("\n\nIr para exercicio: ");
+    scanf("%d",&opcao);
+    Limpar();
+    switch(opcao){
+    case  1:
+        Ex1() ;break;
+    case 2:
+        Ex2();break;
+    case  3:
+        Ex3() ;break;
+    case 4:
+        Ex4();break;
+    case  5:
+        Ex5();break;
+    case 6:
+        Ex6();break;
+    case  7:
+        Ex7();break;
+    case 8:
+        Ex8();break;
+    case  9:
+        Ex9();break;
+    case 10:
+        Ex10();break;
+    case  11:
+        Ex11();break;
+    case 12:
+        Ex12();break;
+    case 13:
+        Ex13();break;
+	case 14: Ex14();break;
+			case 15: Ex15();break;
+	 case 90:
+        Ex90();break;
+        	 case 91:
+        Ex91();break;
+    default:
+    EscolherMenu(1,0);
+    }
+}
+
+void main(){
+    printf("Tecnicas de programacao");
+    printf("\nFacudade: UNIPAC");
+    printf("\nAluno: Gabriel Duarte dos Santos");
+    printf("\nProfessor: Diego Alves da Silva");
+    printf("\nPeriodo: Primeiro\n");
+    Menu();
+}
+
