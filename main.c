@@ -8,6 +8,17 @@
 void EscolherMenu(int x,int exec);
 void Menu();
 void Limpar();
+int CalcFibo(int numero){
+	int result;
+	result = 0;
+	if (numero == 0)
+		result = 0;
+	if (numero == 1)
+		result = 1;
+	if (numero > 1)
+		result = CalcFibo(numero-2)+CalcFibo(numero-1);
+	return result;
+}
 void Ex1(){
     printf("Exercicio 1 - SOMA DE 2 NUMEROS\n\n");
     int x,y;
@@ -313,6 +324,14 @@ void Ex91(){
     }
     EscolherMenu(0,91);
 }
+void Ex92(){
+    printf("Exercicio 92 - PONTO EXTRA: Fibonacci\n\n");
+    int numero;
+    printf("Digite o numero para calculo: ");
+    scanf("%i",&numero);
+    printf("\nResultado= %i\n\n",CalcFibo(numero));
+    EscolherMenu(0,92);
+}
 void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
 
 void EscolherMenu(int x,int exec){
@@ -348,6 +367,7 @@ void EscolherMenu(int x,int exec){
         case 14: Ex14();break;
 		case 15: Ex15();break;
         case 91:Ex91();break;
+        case 92:Ex92();break;
         default:Menu();break;
         }
     }
@@ -372,6 +392,7 @@ void Menu(){
 	printf("\nExercicio 15 - LOTERIA");
     printf("\nExercicio 90 - PONTO EXTRA: Converter Decimal para octal");
     printf("\nExercicio 91 - PONTO EXTRA: Calcular fatorial");
+    printf("\nExercicio 92 - PONTO EXTRA: Fibonacci");
     printf("\n\nIr para exercicio: ");
     scanf("%d",&opcao);
     Limpar();
@@ -408,6 +429,7 @@ void Menu(){
         Ex90();break;
         	 case 91:
         Ex91();break;
+                case 92:Ex92();break;
     default:
     EscolherMenu(1,0);
     }
