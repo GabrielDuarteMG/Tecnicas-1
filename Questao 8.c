@@ -5,7 +5,7 @@
     int i = 2;
     bool Primo;
     Primo = true;
-    while (i != 9) {
+    while (i != n /2) {
       if (n % i == 0)
         Primo = false;
       i++;
